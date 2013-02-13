@@ -106,7 +106,7 @@
 		tpl += '    </div>';
 		tpl += '    <div class="container_12">';
 		tpl += '        <div class="grid_3">';
-		tpl += '	    <a name="prev" href="javascript:;" data-role="button" data-icon="arrow-l" data-theme="b" class="ui-btn ui-btn-icon-left ui-btn-corner-left ui-btn-up-b">';
+		tpl += '	    <a name="prev" href="javascript:;" data-role="button" data-icon="arrow-l" data-theme="c" class="ui-btn ui-btn-icon-left ui-btn-corner-left ui-btn-up-c">';
 		tpl += '		<span class="ui-btn-inner ui-corner-left">';
 		tpl += '		    <span class="ui-btn-text">&nbsp;</span>';
 		tpl += '		    <span class="ui-icon ui-icon-arrow-l ui-icon-shadow">&nbsp;</span>';
@@ -129,7 +129,7 @@
 		tpl += '	    </div>';
 		tpl += '	</div>';
 		tpl += '	<div class="grid_3">';
-		tpl += '	    <a name="next" href="javascript:;" data-role="button" data-icon="arrow-l" data-theme="b" class="ui-btn ui-btn-icon-right ui-btn-corner-right ui-btn-up-b">';
+		tpl += '	    <a name="next" href="javascript:;" data-role="button" data-icon="arrow-l" data-theme="c" class="ui-btn ui-btn-icon-right ui-btn-corner-right ui-btn-up-c">';
 		tpl += '		<span class="ui-btn-inner">';
 		tpl += '		    <span class="ui-btn-text">&nbsp;</span>';
 		tpl += '		    <span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span>';
