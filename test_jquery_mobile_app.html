@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+
+	<title>Test App</title>
+
+	<style type="text/css">
+	    body { margin: 5px 10px;padding: 0; font-family:courier new; font-size:12px; }
+
+	    .frame-border {
+
+	    }
+
+	    .device-selector {
+	    text-align:center;
+	    }
+
+	    .device-selector a {
+	    background: url(images/device-sprite.png) no-repeat top left;
+	    width: 48px; height: 48px;
+	    margin:0 10px;
+	    display:inline-block;
+	    border:solid 5px transparent;
+	    border-radius:3px;
+	    }
+
+	    .device-selector a.tablet{ background-position: 0 0; }
+	    .device-selector a.tablet-landscape{ background-position: -96px 0; }
+	    .device-selector a.mobile{ background-position: -192px 0; }
+	    .device-selector a.mobile-landscape{ background-position: -288px 0; }
+	    .device-selector a.desktop{ background-position: -384px 0; }
+
+		.device-selector a:hover {
+		background-color:rgba(255, 255, 255, .5);
+		}
+
+		.device-selector a.chosen {
+		background-color:rgba(255, 255, 255, .8);
+		}
+
+	    .demo-selector {
+	    text-align:center;
+	    }
+
+	    .demo-selector p {
+		display:inline-block;
+	    }
+
+	    .demo-selector a {
+		text-decoration:none;
+		color:#00f;
+	    }
+
+		.demo-selector a.chosen {
+		text-decoration:underline;
+		font-weight:bold;
+		color:#f00;
+		}
+
+	    .demo-selector .demo-desc {
+		font-size:18px;
+		font-family:arial;
+	    }
+
+	    #demo-frame {
+
+	    width: 1024px;
+
+
+
+
+	    border: solid 30px  rgba(0,0,0,.7);
+	    -moz-border-radius-topleft: 30px;
+	    -moz-border-radius-topright:30px;
+	    -moz-border-radius-bottomleft:30px;
+	    -moz-border-radius-bottomright:30px;
+	    -webkit-border-top-left-radius:30px;
+	    -webkit-border-top-right-radius:30px;
+	    -webkit-border-bottom-left-radius:30px;
+	    -webkit-border-bottom-right-radius:30px;
+	    border-top-left-radius:30px;
+	    border-top-right-radius:30px;
+	    border-bottom-left-radius:30px;
+	    border-bottom-right-radius:30px;
+
+	    -moz-box-shadow: 5px 5px 25px #000000;
+	    -webkit-box-shadow: 5px 5px 25px #000000;
+	    box-shadow: 5px 5px 25px #000000;
+
+	    }
+
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function () {
+
+	    $('.device-selector > a').click(function(e) {
+		    e.preventDefault();
+		    var $this = $(this);
+		    $this.addClass('chosen').siblings('a').removeClass('chosen');
+		    var width = $this.data('width');
+		    var left = ((parseInt(width) + 60) / 2) * -1;
+		    var height = $this.data('height');
+		    $('#demo-frame').animate({ 'width': width, 'left' : left });
+	    });
+
+	});
+	</script>
+    </head>
+    <body style="background-image: url(https://www.icloud.com/system/cloudos/1O51/en-us/source/resources/images/bg_tile.jpg);">
+
+	<table style="width: 100%;">
+	    <tbody>
+		<tr>
+		    <td>
+			<div class="device-selector">
+			    <p>Device:</p>
+			    <a class="mobile chosen" data-width="320px" data-height="480px" href="#mobile"></a>
+			    <a class="tablet" data-width="768px" data-height="1024px" href="#tablet"></a>
+			    <!--<a class="desktop" data-width="1224px" data-height="600px" href="#desktop"></a>-->
+			</div>
+		    </td>
+		</tr>
+		<tr>
+		    <td style="text-align: center;">
+			<div class="frame-border">
+			    <iframe id="demo-frame" src="demo.html" style="width: 320px; height: 480px;"></iframe>
+			</div>
+		    </td>
+		</tr>
+	    </tbody>
+	</table>
+
+    </body>
+</html>
