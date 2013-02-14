@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Advanced :: Date Navigation</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+	<!-- Begin :: Styles -->
+
+	<link rel="stylesheet" href="css/jquery-mobile/jquery.mobile-1.2.0.min.css"/>
+	<link rel="stylesheet" href="css/jquery-mobile/jquery-mobile-fluid960.min.css"/>
+
+	<!-- End :: Styles -->
+
+	<!-- Begin :: Scripts -->
+
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+	<script src="js/jquery.date.core.js"></script>
+	<script src="js/jquery.mobile.date.navigation.js"></script>
+
+	<script type="text/javascript">
+
+	    $(function(){
+
+		$("#dateNavigation").dateNavigation({
+		    options: {
+			date: "2013-02-14",
+			range: "year",
+
+			rangeLabels: {
+			    week: 'Semana',
+			    month: 'Mes',
+			    year: 'Año'
+			}
+
+		    },
+		    events: {
+			onPreviousClick: function(e){
+			    $("#eventLog").prepend("<span style='color: red'>onPreviousClick"+"</span></br>");
+			},
+			onNextClick: function(e){
+			    $("#eventLog").prepend("<span style='color: blue'>onNextClick"+"</span></br>");
+			},
+			onRangeChange: function(e){
+			    $("#eventLog").prepend("<span style='color: green'>onRangeChange => oldRange: '"+e.oldRange+"', newRange: '"+e.newRange+"'"+"</span></br>");
+			},
+			onNavigate: function(e){
+			    $("#eventLog").prepend("<span style='color: gray'>onNavigate => rangeSelected: '"+e.rangeSelected+"', range.ini: '"+e.range.ini+"', range.end: '"+e.range.end+"', date: '"+e.date+"'"+"</span></br>");
+			}
+		    }
+		});
+
+	    });
+
+	</script>
+
+	<!-- End :: Scripts -->
+
+    </head>
+
+    <body>
+
+        <!-- Begin :: Page -->
+
+        <div data-role="page">
+
+            <div data-theme="e" data-role="header">
+                <h5>Advanced :: Date Navigation</h5>
+            </div>
+
+            <div data-role="content">
+		<div id="dateNavigation"></div>
+
+		</br>
+
+		<div>Event Log:</div>
+
+		</br>
+
+		<div style="border: 1px solid #DEDEDE; padding: 5px;">
+
+		    <div id="eventLog"></div>
+
+		</div>
+
+            </div>
+
+        </div>
+
+	<!-- End :: Page -->
+
+    </body>
+
+</html>

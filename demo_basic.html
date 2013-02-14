@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Bassic :: JQuery Mobile Date Navigation</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+	<!-- Begin :: Styles -->
+
+	<link rel="stylesheet" href="css/jquery-mobile/jquery.mobile-1.2.0.min.css"/>
+	<link rel="stylesheet" href="css/jquery-mobile/jquery-mobile-fluid960.min.css"/>
+
+	<!-- End :: Styles -->
+
+	<!-- Begin :: Scripts -->
+
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+	<script src="js/jquery.date.core.js"></script>
+	<script src="js/jquery.mobile.date.navigation.js"></script>
+
+	<script type="text/javascript">
+
+	    $(function(){
+
+		$("#dateNavigation").dateNavigation();
+
+	    });
+
+	</script>
+
+	<!-- End :: Scripts -->
+
+    </head>
+
+    <body>
+
+        <!-- Begin :: Page -->
+
+        <div data-role="page">
+
+            <div data-theme="e" data-role="header">
+                <h5> Basic :: Date Navigation</h5>
+            </div>
+
+            <div data-role="content">
+		<div id="dateNavigation" data-date="2013-02-14" data-range="month"></div>
+            </div>
+
+        </div>
+
+	<!-- End :: Page -->
+
+    </body>
+
+</html>

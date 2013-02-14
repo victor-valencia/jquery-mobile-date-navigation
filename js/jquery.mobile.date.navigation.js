@@ -74,9 +74,16 @@
 
 		var options = $.extend( { }, defaults.options, target.data() );
 
-		options = $.extend( { }, options, custom.options );
+		var events = $.extend( { }, defaults.events );
 
-		var events = $.extend( { }, defaults.events, custom.events );
+		if( custom ) {
+		    if( custom.options ) {
+			options = $.extend( { }, options, custom.options );
+		    }
+		    if( custom.events ) {
+			events = $.extend( { }, events, custom.events );
+		    }
+		}
 
 		//console.log("Data by JQuery:");
 		//console.log(config);
